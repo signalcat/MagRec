@@ -3,29 +3,34 @@ package com.geometrics.magrec;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.ExpandableListAdapter;
+import android.widget.ExpandableListView;
 import android.widget.ListView;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity
 {
-    ArrayList<String> files = new ArrayList<String>(10);
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        populateFileList();
+    }
 
-        // Populate the file list
-        for (int i = 0; i < 20; i++) {
-            files.add("file" + Integer.toString(i));
-        }
-
-        ArrayAdapter<String> itemsAdapter =
-                new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, files);
-
+    private void populateFileList() {
+        // Construct the data source
+        ArrayList<SurveyFile> arrayOfFiles = SurveyFile.getFiles();
+        // Create the adapter to convert the array to views
+        CustomFilesAdapter adapter = new CustomFilesAdapter(this, arrayOfFiles);
+        // Attach the adapter to a ListView
         ListView listView = (ListView) findViewById(R.id.lvFileList);
-        listView.setAdapter(itemsAdapter);
+        listView.setAdapter(adapter);
     }
 }
+
