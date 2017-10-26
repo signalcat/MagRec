@@ -8,3 +8,11 @@
 * 5 Display survey information: GPS location, latitude, longitude, data/time
 * 6 Store the data file in a special format on internal/external storage.
 * 7 Allow users to analyze the data by different plots.
+
+## TODO:
+* [ ] Add project name drop down menu on the action bar
+* [ ] Complete the rest setting screens
+* [ ] Change the playback/edit icon 
+* [ ] Add a monitor screen
+* [ ] Add help menu
+
