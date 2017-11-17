@@ -10,9 +10,9 @@
 * 7 Allow users to analyze the data by different plots.
 
 ## TODO:
-* [ ] Add project name drop down menu on the action bar
+* [X] Add project name drop down menu on the action bar
 * [ ] Complete the rest setting screens
 * [ ] Change the playback/edit icon 
 * [ ] Add a monitor screen
-* [ ] Add help menu
+* [X] Add help menu
 
