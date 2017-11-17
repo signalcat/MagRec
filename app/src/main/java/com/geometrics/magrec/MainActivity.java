@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         // Sets the toolbar to act as the ActionBar
         setSupportActionBar(toolbar);
+        // Populate the files under project
+        populateFileList();
 
     }
 
@@ -38,7 +40,6 @@ public class MainActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
-
 
         // Build project list
         ArrayList projectNameList = new ArrayList<>();
@@ -52,13 +53,10 @@ public class MainActivity extends AppCompatActivity
         // Construct array adapter
         ArrayAdapter<String> projectNameAdapter = new ArrayAdapter<String>(
                 getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, projectNameList);
-
         // Specify the layout to use the list
         projectNameAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         spinner.setAdapter(projectNameAdapter);
-
-        populateFileList();
 
         return true;
     }

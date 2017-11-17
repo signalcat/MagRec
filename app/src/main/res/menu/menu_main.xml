@@ -7,7 +7,14 @@
         android:title="Projects">
     </item>
     <item
-        android:id="@+id/miMenu"
-        android:title="OverFlowMenu">
+        android:title="More"
+        android:id="@+id/miOverFlowMenu"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_overflow">
+        <menu>
+            <item
+                android:id="@+id/menu_help"
+                android:title="Help"></item>
+        </menu>
     </item>
 </menu>
